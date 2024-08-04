@@ -22,7 +22,7 @@ const initialState = {
 
 export const ExpenseTrackerContext = createContext<IInitialState>(initialState);
 
-export const ContextProvider = ({ children }: PropsWithChildren<React.ReactNode>) => {
+export const ContextProvider = ({ children }: PropsWithChildren) => {
     const [transactions, setTransactions] = useState<ITransaction[] | []>(
         // @ts-ignore
         JSON.parse(localStorage.getItem('transactions')) || initialState.transactions
